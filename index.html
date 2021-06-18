@@ -1,0 +1,349 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	
+	<link rel="stylesheet" href="./jquery.mobile/jquery.mobile-1.4.5.min.css"/>
+	<script src="./jquery.mobile/jquery-1.11.1.min.js"></script>
+	<script src="./jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script src="cordova.js"></script>	
+
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%;}
+  .picture li a {display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%;  height:auto;}
+  .picture li img:hover { display:block; width:100%;  height:auto;} 
+
+  div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>BUSAN Travel</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img src="./img/광안대교.jpg" height="300px" width="300px">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">랜드마크/역사/자연</a></li>
+				<li><a href="#movie">액티비티/체험</a></li>
+				<li><a href="#wizard3-1">전시회/체험</a></li>
+				<li><a href="#gallery">음식</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>prod.kwak_xhan</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>랜드마크/역사/자연</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>랜드마크</h3>
+					 <p>더베이101</p>
+					 <p>자갈치</p>
+					 <p>BIFF광장</p>
+					 <p>이바구길</p>
+					 <p>광안대교</p>
+					 <p>해동용궁사</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>역사</h3>
+					<p>동래읍성</p>
+					<p>자성대</p>
+					<p>동래문화유적지</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>자연</h3>
+					<p>해운대해수욕장</p>
+					<p>광안리해수욕장</p>
+					<p>송도해수욕장</p>
+					<p>오륙도</p>
+					<p>고흐숲</p>
+
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>prod.kwak_xhan</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>액티비티/체험</h1>
+		</div>
+		<div data-role="content" >
+
+			<div class="ui-bar ui-bar-e">서면런닝맨</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="서면런닝맨.mp4" type="video/mp4">
+			</video></li>
+
+			<br>
+			<div class="ui-bar ui-bar-e">광안비치랜드</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="광안비치랜드.mp4" type="video/mp4">
+			</video></li>
+		
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="wizard3-1" data-theme="b">
+		<div data-role="header">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>전시회/체험</h1>
+		</div>
+
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e"></div><br/>
+				
+
+
+				<p style="font-size: 20px">1. 서면미술관</p> <a href="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%B6%80%EC%82%B0+%EC%A0%84%EC%8B%9C%ED%9A%8C&oquery=%EB%B6%80%EC%82%B0+%EB%AE%A4%EC%A7%80%EC%97%84%EB%8B%A4&tqi=UCvJDwprvTVssNrAUdVssssssaZ-024758">[Click]현재 진행중인 체험관</a><br><br>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=ko"></script> 
+
+				<script> 
+  				 function initialize() { 
+				 var myLatlng = new google.maps.LatLng(35.154002, 129.062581); // 좌표값
+  				 var mapOptions = { 
+        		 zoom: 14, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP 
+  				} 
+  				var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); 
+ 				 var marker = new google.maps.Marker({ 
+				 position: myLatlng, 
+					map: map, title: "회사명" // 마커에 마우스를 올렸을때 간략하게 표기될 설명글
+				 }); 
+  				} 
+				window.onload = initialize;
+				</script>
+
+				<div id="map_canvas" style="width: 100%; height: 400px; margin:0px;"></div>
+
+		</div>		
+		
+		<div data-role="footer">
+			<a href="#wizard3-2" data-transition="slide" >다음</a>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="wizard3-2" data-theme="b">
+		<div data-role="header">
+			<a href="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%B6%80%EC%82%B0+%EC%A0%84%EC%8B%9C%ED%9A%8C&oquery=%EB%B6%80%EC%82%B0+%EB%AE%A4%EC%A7%80%EC%97%84%EB%8B%A4&tqi=UCvJDwprvTVssNrAUdVssssssaZ-024758">[Click]현재 진행중인 체험관</a><br><br>
+			<p style="font-size: 20px">2. 부산뮤지엄다</p>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=ko"></script> 
+
+				<script> 
+  				 function initialize() { 
+				 var myLatlng = new google.maps.LatLng(35.171273, 129.128760); // 좌표값
+  				 var mapOptions = { 
+        		 zoom: 14, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP 
+  				} 
+  				var map = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions); 
+ 				 var marker = new google.maps.Marker({ 
+				 position: myLatlng, 
+					map: map, title: "회사명" // 마커에 마우스를 올렸을때 간략하게 표기될 설명글
+				 }); 
+  				} 
+				window.onload = initialize;
+				</script>
+
+				<div id="map_canvas2" style="width: 100%; height: 400px; margin:0px;"></div>
+		
+		<div data-role="footer">
+			<a href="#wizard3-1"  data-direction="reverse">이전</a>
+			<a href="#wizard3-3" data-transition="slide">다음</a>
+		</div>
+		
+		</div>
+	</div>			
+
+
+<div data-role="page" id="wizard3-3" data-theme="b">
+		<div data-role="header">
+			<a href="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%B6%80%EC%82%B0+%EC%A0%84%EC%8B%9C%ED%9A%8C&oquery=%EB%B6%80%EC%82%B0+%EB%AE%A4%EC%A7%80%EC%97%84%EB%8B%A4&tqi=UCvJDwprvTVssNrAUdVssssssaZ-024758">[Click]현재 진행중인 체험관</a><br><br>
+			<p style="font-size: 20px">3. 벡스코</p>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=ko"></script> 
+
+				<script> 
+  				 function initialize() { 
+				 var myLatlng = new google.maps.LatLng(35.169557, 129.136219); // 좌표값
+  				 var mapOptions = { 
+        		 zoom: 14, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP 
+  				} 
+  				var map = new google.maps.Map(document.getElementById('map_canvas3'), mapOptions); 
+ 				 var marker = new google.maps.Marker({ 
+				 position: myLatlng, 
+					map: map, title: "회사명" // 마커에 마우스를 올렸을때 간략하게 표기될 설명글
+				 }); 
+  				} 
+				window.onload = initialize;
+				</script>
+
+				<div id="map_canvas3" style="width: 100%; height: 400px; margin:0px;"></div>
+
+		
+		<div data-role="footer">
+			<a href="#wizard3-2"  data-direction="reverse">이전</a>
+			<a href="#wizard3-4" data-transition="slide">다음</a>
+		</div>
+		
+		</div>
+	</div>	
+
+
+
+
+<div data-role="page" id="wizard3-4" data-theme="b">
+		<div data-role="header">
+
+			<a href="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%B6%80%EC%82%B0+%EC%A0%84%EC%8B%9C%ED%9A%8C&oquery=%EB%B6%80%EC%82%B0+%EB%AE%A4%EC%A7%80%EC%97%84%EB%8B%A4&tqi=UCvJDwprvTVssNrAUdVssssssaZ-024758">[Click]현재 진행중인 체험관</a><br><br>
+
+			<p style="font-size: 20px">4. 부산현대미술관</p>
+
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=en"></script> 
+
+				<script> 
+  				 function initialize() { 
+				 var myLatlng = new google.maps.LatLng(35.109531, 128.942836); // 좌표값
+  				 var mapOptions = { 
+        		 zoom: 14, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP 
+  				} 
+  				var map = new google.maps.Map(document.getElementById('map_canvas4'), mapOptions); 
+ 				 var marker = new google.maps.Marker({ 
+				 position: myLatlng, 
+					map: map, title: "회사명" // 마커에 마우스를 올렸을때 간략하게 표기될 설명글
+				 }); 
+  				} 
+				window.onload = initialize;
+				</script>
+
+				<div id="map_canvas4" style="width: 100%; height: 400px; margin:0px;"></div>
+		
+		<div data-role="footer">
+			<a href="#wizard3-3"  data-direction="reverse">이전</a>
+			
+		</div>
+		
+		</div>
+	</div>	
+
+
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>음식</h1>
+		</div>
+
+
+
+
+<div class="gallery" align="center">
+  <a target="_blank" href="img_5terre.jpg">
+    <img src="./img/광어회.jpg" alt="Cinque Terre" width="600" height="400" align="center">
+  </a>
+  <div class="desc">생선회</div><br>
+
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_forest.jpg">
+    <img src="./img/꼼장어구이.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">꼼장어구이</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_lights.jpg">
+    <img src="./img/동래파전.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">동래파전</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_mountains.jpg">
+    <img src="./img/돼지국밥.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">돼지국밥</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_5terre.jpg">
+    <img src="./img/낙곱새.jpg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">낙곱새</div><br>
+
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_forest.jpg">
+    <img src="./img/비빔당면.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">비빔당면</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_lights.jpg">
+    <img src="./img/조개구이.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">조개구이</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_mountains.jpg">
+    <img src="./img/초량밀면.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">초량밀면</div>
+</div>
+
+</p>		
+
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>prod.kwak_xhan</h1>
+		</div>		
+	</div>
+</div>	
+</body>
+</html>
